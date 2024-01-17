@@ -1,4 +1,4 @@
-import { IVehicleDto, VehicleDto } from 'src/modules/vehicle/domain/VehicleDto';
+import { IVehicleDto } from '../../../modules/vehicle/domain/VehicleDto';
 import { ICustomerLogin } from '../domain/CustomerLoginEntity';
 import { CustomerRepository } from '../domain/CustomerRepository';
 import { CustomerDto, ICustomerDto } from '../domain/CustomerDto';
@@ -14,7 +14,7 @@ function getAllCustomersFromLocalStorage():Map<string, ICustomerDto> {
   return new Map(JSON.parse(customers) as Iterable<[string, ICustomerDto]>);
 }
 
-function getCustomerVehicles():Map<string, IVehicleDto> {
+function getCustomerVehicles(): Map<string, IVehicleDto> {
   const vehicles = localStorage.getItem('customer-vehicles');
 
   if (!vehicles) {
