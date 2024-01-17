@@ -1,4 +1,4 @@
-import { IVehicleDto } from 'src/modules/vehicle/domain/VehicleDto';
+import { IVehicleDto } from '../../../modules/vehicle/domain/VehicleDto';
 import { ICustomerDto } from './CustomerDto';
 import { ICustomerLogin } from './CustomerLoginEntity';
 import { ICustomerRegistrationDto } from './CustomerRegistrationDto';
