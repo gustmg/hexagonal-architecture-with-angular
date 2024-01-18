@@ -21,6 +21,7 @@ import addVehicle from '../../modules/customer/application/add-vehicle/addVehicl
 import createLocalStorageCustomerRepository from '../../modules/customer/infrastructure/LocalStorageCustomerRepository';
 import getCustomerVehicles from '../../modules/customer/application/get-customer-vehicles/getCustomerVehicles';
 import { MatTableModule } from '@angular/material/table';
+import { CustomerService } from '../store/customer.service';
 
 const repository = createLocalStorageVehicleRepository();
 const customerRepository = createLocalStorageCustomerRepository();
@@ -47,6 +48,11 @@ export class HomeComponent implements OnInit {
   selectedVehicle: IVehicleEntity = new VehicleEntity();
   customerVehicles: IVehicleEntity[] = [];
   displayedColumns: string[] = ['model', 'year', 'color', 'price'];
+  loggedCustomer: string;
+
+  constructor(private customerService: CustomerService) {
+    this.loggedCustomer = this.customerService.getLoggedCustomer();
+  }
 
   async fetchVehicles() {
     try {
