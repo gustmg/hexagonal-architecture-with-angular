@@ -1,0 +1,36 @@
+<mat-grid-list cols="1" rowHeight="100%">
+  <mat-grid-tile colspan="1">
+    <mat-card class="login-card pa-md" appearance="raised">
+      <mat-card-header class="pa-lg">
+        <mat-card-title>Registro de nuevo cliente</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="customerRegistrationForm.name">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+          <mat-label>Apellidos</mat-label>
+          <input matInput [(ngModel)]="customerRegistrationForm.lastName">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput [(ngModel)]="customerRegistrationForm.email">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [(ngModel)]="customerRegistrationForm.password" type="password">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions [align]="'end'">
+        <button mat-raised-button color="primary" (click)="this.register()">Registrarse</button>
+      </mat-card-actions>
+      <mat-card-actions [align]="'end'" routerLink="/">
+        <button mat-stroked-button color="primary">Iniciar sesión</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
