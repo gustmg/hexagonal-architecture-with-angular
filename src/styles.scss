@@ -2,3 +2,11 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-card {
+  padding: 1rem !important;
+  border-radius: 24px !important;
+  box-shadow:  8px 8px 24px #f4e6fc,
+              -8px -8px 24px #e4e8fa !important;
+
+}
