@@ -45,10 +45,16 @@ export class LoginComponent {
       const customer = await login(repository, this.customerLoginForm);
       this.customer.set(new CustomerEntity().fromCustomerDto(customer));
 
-      console.log('Inicio de sesión realizado con éxito 🎉');
+      console.log(
+        '%c Inicio de sesión realizado con éxito 🎉',
+        'background: #CCFFCC; color: black; padding: 10px;'
+      );
       this.router.navigate(['/home']);
     } catch (error) {
-      console.log(`Ocurrió un error al iniciar sesión: ${error}`);
+      console.log(
+        `%c ❌ Ocurrió un error al iniciar sesión: ${error}`,
+        'background: #FF8B8B; color: black; padding: 10px;'
+      );
     }
   }
 }

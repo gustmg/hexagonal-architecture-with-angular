@@ -55,7 +55,10 @@ export class HomeComponent implements OnInit {
         new VehicleEntity().fromVehicleDto(vehicleDto)
       );
     } catch (error) {
-      console.log(`Ocurrió un error al obtener vehículos: ${error}`);
+      console.log(
+        `%c ❌ Ocurrió un error al obtener vehículos: ${error}`,
+        'background: #FF8B8B; color: black; padding: 10px;'
+      );
     }
   }
 
@@ -67,14 +70,20 @@ export class HomeComponent implements OnInit {
         );
         await addVehicle(customerRepository, payload);
 
-        console.log('Vehículo agregado! 🎉');
+        console.log(
+          '%c Vehículo agregado! 🎉',
+          'background: #CCFFCC; color: black; padding: 10px;'
+        );
 
         this.fetchCustomerVehicles();
       } else {
         throw new Error('No se ha seleccionado un vehículo para agregar');
       }
     } catch (error) {
-      console.log(`Ocurrió un error al agregar vehículo: ${error}`);
+      console.log(
+        `%c ❌ Ocurrió un error al agregar vehículo. ${error}`,
+        'background: #FF8B8B; color: black; padding: 10px;'
+      );
     }
   }
 
@@ -88,7 +97,8 @@ export class HomeComponent implements OnInit {
       );
     } catch (error) {
       console.log(
-        `Ocurrió un error al obtener vehículos del cliente: ${error}`
+        `%c ❌ Ocurrió un error al obtener vehículos del cliente. ${error}`,
+        'background: #FF8B8B; color: black; padding: 10px;'
       );
     }
   }

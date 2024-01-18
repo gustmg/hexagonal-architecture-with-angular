@@ -47,11 +47,17 @@ export class RegisterComponent {
 
       await register(repository, payload);
 
-      console.log('¡Registro realizado correctamente! 🎉');
+      console.log(
+        '%c ¡Registro realizado correctamente! 🎉',
+        'background: #CCFFCC; color: black; padding: 10px;'
+      );
 
       this.router.navigate(['/']);
     } catch (error) {
-      console.log(`Ocurrió un error al registrar cliente: ${error}`);
+      console.log(
+        `%c ❌ Ocurrió un error al registrar cliente: ${error}`,
+        'background: #FF8B8B; color: black; padding: 10px;'
+      );
     }
   }
 }
