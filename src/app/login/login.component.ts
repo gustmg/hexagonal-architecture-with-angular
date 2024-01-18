@@ -11,6 +11,8 @@ import {
 } from '../../modules/customer/domain/CustomerEntity';
 import login from '../../modules/customer/application/login/login';
 import createLocalStorageCustomerRepository from '../../modules/customer/infrastructure/LocalStorageCustomerRepository';
+import { ICustomerLogin } from '../../modules/customer/domain/CustomerLoginEntity';
+import { FormsModule } from '@angular/forms';
 
 const repository = createLocalStorageCustomerRepository();
 
@@ -24,6 +26,7 @@ const repository = createLocalStorageCustomerRepository();
     MatInputModule,
     MatButtonModule,
     RouterLink,
+    FormsModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -32,7 +35,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   customer = signal<ICustomerEntity>(new CustomerEntity());
-  customerLoginForm = {
+  customerLoginForm: ICustomerLogin = {
     email: '',
     password: '',
   };
